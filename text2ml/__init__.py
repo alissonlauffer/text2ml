@@ -3,7 +3,7 @@ class InvalidParseModeError(Exception):
 
 name = "text2ml"
 
-def encode(text, entities, parse_mode):
+def format(text, entities, parse_mode):
     if parse_mode.lower() == 'html':
         return text2html(text, entities)
     elif parse_mode.lower() == 'markdown':
