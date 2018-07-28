@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name='text2ml',
-    version='1.1',
+    version='2.0',
     packages=[''],
     url='https://github.com/marminino/text2ml',
     author='Alisson Lauffer',
