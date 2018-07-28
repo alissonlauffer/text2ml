@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="logo.png" alt="Text2ml"/>
+  <img src="https://i.imgur.com/WYQmxDw.png" alt="Text2ml"/>
   <br>
   <a href="https://pypi.org/project/text2ml"><img src="https://img.shields.io/pypi/v/text2ml.svg" /></a>
 </p>
