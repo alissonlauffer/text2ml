@@ -45,6 +45,12 @@ def text2html(text, entities):
             text = text[:entity['offset'] + entity['length'] + len_s] + '</a>' + text[entity['offset'] + entity['length'] + len_s:]
             len_s += 4
 
+        elif entity['type'] == 'text_mention':
+            text = text[:entity['offset'] + len_s] + '<a href="tg://user?id={}">'.format(entity['user']['id']) + text[entity['offset'] + len_s:]
+            len_s += len('<a href="tg://user?id={}">'.format(entity['user']['id']))
+            text = text[:entity['offset'] + entity['length'] + len_s] + '</a>' + text[entity['offset'] + entity['length'] + len_s:]
+            len_s += 4
+
     return text
 
 
@@ -80,5 +86,11 @@ def text2markdown(text, entities):
             len_s += 2
             text = text[:entity['offset'] + entity['length'] + len_s] + ']' + '({})'.format(entity['url']) + text[entity['offset'] + entity['length'] + len_s:]
             len_s += len('({})'.format(entity['url']))
+
+        elif entity['type'] == 'text_mention':
+            text = text[:entity['offset'] + len_s] + '[' + text[entity['offset'] + len_s:]
+            len_s += 2
+            text = text[:entity['offset'] + entity['length'] + len_s] + ']' + '(tg://user?id={})'.format(entity['user']['id']) + text[entity['offset'] + entity['length'] + len_s:]
+            len_s += len('(tg://user?id={})'.format(entity['user']['id']))
 
     return text
