@@ -1,11 +1,11 @@
-from setuptools import setup
+import setuptools
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
-setup(
+setuptools.setup(
     name='text2ml',
-    version='2.1.0 Dev',
+    version='2.1.0',
     packages=setuptools.find_packages(),
     url='https://github.com/marminino/text2ml',
     author='Alisson Lauffer',
